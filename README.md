@@ -12,6 +12,8 @@ Now when you fire up your project, everything should already be working. Open th
 # Playing around
 In the level, you should see a RaymarchVolumeDraw actor. If you scale it, move it around or rotate it, the raymarched volume will be affected accordingly. Notice that the texture will not update or draw when you're in editor, as these are called from blueprint's Tick().
 
+If you download another RAW file, you can edit the path in the LoadRAWTo3DTexture blueprint, keep in mind it's relative to your project's "Content" folder.
+
 # How it works under the hood
 
 This section I will finish later, but if you know how Raymarching works, you will not be surprised. I use a vertex shader to render a cube with color == pixel position in object space, then give my fragment shader a position that I'm looking from (in model space) and sample a 3d volume along the ray connecting those two.
@@ -19,6 +21,9 @@ This section I will finish later, but if you know how Raymarching works, you wil
 The interesting part is how this integrates into the rest of Unreal.
 
 Go through the source code in the Raymarcher plugin and see for yourself. Start with BlueprintLibrary codes for how the blueprints connect to the code and then go to RaymarchRendering for the juicy stuff. I commented extensively and tried to keep it clean, so the code should be pretty self-explanatory.
+
+Check out Temaran's (super old) plugin where he's doing something similar and explains more some of the concepts I just skipped.
+https://github.com/Temaran/UE4ShaderPluginDemo
 
 # Issues
 In "DrawTextureToScreen" widget, I have a hardcoded 1920x1080 resolution for the picture being drawn. Also the "Raymarch_RT" renderTarget texture has 1920x1080 as it's size, change these if your resolution is different.
@@ -33,6 +38,9 @@ The raymarching pixel shader itself is primitive, but that was not the goal of t
 # Future work
 I am currently working on capturing the scene depth before doing my own rendering, which would allow me to actually place the volume within the scene properly. 
 Also, I will probably switch to 2-pass rendering, as having both entry and exit points for raymarch would give me more flexibility with volume cropping.
+
+After that, I want to try integrating 3D texture sampling into a new shader model that would be part of the usual deffered pipeline. This will have some advantages and some disadvantages. For example,
+it will need changes in engine source, so I will have to fork the whole engine. Also it will probably be a bit more work. But obviously, this would be a cleaner solution than doing my own rendering on the side and then slapping a texture over the whole scene.
 
 # Sources
 
