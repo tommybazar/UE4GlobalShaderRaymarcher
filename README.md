@@ -3,9 +3,10 @@
 A demo showing how a global shader plugin can be used to raymarch a volume texture.
 
 # Installation 
-1) Create an empty c++ project and close it.
-2) Copy "Raymarcher" directory from "Plugins" into your engine plugins folder (you must have source version of Unreal - packaging a plugin for a binary version seemed like too much of a hassle for now).
+1) Fire up your UE4.sln project from Visual studio and create an empty c++ project and close it.
+2) Copy "Raymarcher" directory from "Plugins" into your engine plugins folder (you must have source version of Unreal - packaging a plugin for a binary version seemed like too much of a hassle for now). Regenerate the project files for your solution to include the new plugin.
 3) Copy "Content" from "Project" directory over the folder with the same name in your new project and reopen the project.
+4) Reopen your UE4.sln and fire it up again. The plugin should compile and be activated by default. Note that It's only currently tested for 4.19.2
 
 Now when you fire up your project, everything should already be working. Open the map Minimal_Default in StarterContent/Maps and press play.
 
