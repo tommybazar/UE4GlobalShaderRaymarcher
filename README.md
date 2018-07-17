@@ -2,7 +2,7 @@
 
 A demo showing how a global shader plugin can be used to raymarch a volume texture.
 
-##UPDATE for 4.20
+#UPDATE for 4.20
 From engine version 4.20, there is full editor support for Volume Textures, so what I'm doing in this plugin can be done way better using the editor + custom material nodes.
  
  Still, the code is useful for learning how to invoke your own shaders with various parameters separated from the standard UE pipeline (and it's not as outdated as most sources available on this topic).
