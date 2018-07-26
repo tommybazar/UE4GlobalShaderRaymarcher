@@ -5,7 +5,7 @@ A demo showing how a global shader plugin can be used to raymarch a volume textu
 ## UPDATE for 4.20
 From engine version 4.20, there is full editor support for Volume Textures, so what I'm doing in this plugin can be done way better using the editor + custom material nodes.
  
- Still, the code is useful for learning how to invoke your own shaders with various parameters separated from the standard UE pipeline (and it's not as outdated as most sources available on this topic).
+Still, the code is useful for learning how to invoke your own shaders with various parameters separated from the standard UE pipeline (and it's not as outdated as most sources available on this topic).
 
 # Installation 
 1) Create a new blank C++ project and close it.
@@ -13,6 +13,8 @@ From engine version 4.20, there is full editor support for Volume Textures, so w
 4) Open your project, recompile when asked to do so.
 
 Now when you fire up your project, everything should already be working. Open the map Minimal_Default in StarterContent/Maps and press play.
+
+Tested on 4.19 and 4.20.0-preview5.
 
 # Playing around
 In the level, you should see a RaymarchVolumeDraw actor. If you scale it, move it around or rotate it, the raymarched volume will be affected accordingly. Notice that the texture will not update or draw when you're in editor, as updates are called from blueprint's Tick().
@@ -51,7 +53,7 @@ An example would be a blueprint node that takes a VolumeTexture and performs a G
 
 Phillip Rideout - http://prideout.net/blog/?p=64 - I took the box-intersection code from here, also some inspiration for my single-pass shader
 
-IAPR-TC18 - https://www.tc18.org/code_data_set/3D_images.php - I took the aneurism RAW file from here. They have a nice collection of other RAW images.
+IAPR-TC18 - https://tc18.org/3D_images.html - I took the aneurism RAW file from here. They have a nice collection of other RAW images.
 
 UE4 documentation on global shaders as plugins - https://docs.unrealengine.com/en-US/Programming/Rendering/ShaderInPlugin/QuickStart - My plugin code started by editing the files provided there, no way I could've figured all this stuff without it.
 
