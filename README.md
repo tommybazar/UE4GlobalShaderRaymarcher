@@ -1,11 +1,20 @@
-# UE4GlobalShaderRaymarcher
+# Deprecation notice
+This repo is deprecated and won't be updated any longer. Find the new and improved repo @ https://github.com/TheHugeManatee/UE4_VolumeRaymarching
 
-A demo showing how a global shader plugin can be used to raymarch a volume texture.
+Unlike this one, it's actually using Volume Texture assets and regular materials and has a nice test map.
+
+
+
 
 ## UPDATE for 4.20
 From engine version 4.20, there is full editor support for Volume Textures, so what I'm doing in this plugin can be done way better using the editor + custom material nodes.
  
 Still, the code is useful for learning how to invoke your own shaders with various parameters separated from the standard UE pipeline (and it's not as outdated as most sources available on this topic).
+
+# UE4GlobalShaderRaymarcher
+
+A demo showing how a global shader plugin can be used to raymarch a volume texture.
+
 
 # Installation 
 1) Create a new blank C++ project and close it.
